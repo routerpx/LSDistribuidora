@@ -1,0 +1,24 @@
+create database LS
+
+use LS
+
+create table Produtos(
+ID int primary key identity(1,1),
+Nome varchar(100), 
+Categoria varchar(100), 
+Quantidade int, 
+Valor float
+)
+
+create table Usuarios(
+ID int primary key identity(1,1),
+Login varchar(100),
+Senha varchar(100),
+Nome varchar(100),
+Nivel int not null default 1, --nível de acesso:1=Administrador. 2=Operador
+Ativo bit not null default 1
+)
+
+insert into Usuarios( login,senha,nome,nivel,ativo) values ('router','12345','Joao Pedro',1,1)
+insert into Produtos(nome,categoria,quantidade,valor)values('Castanha-Para','Grão',2,80)
+insert into Produtos(nome,categoria,quantidade,valor)values('Própolis','Estrato',8,280)
